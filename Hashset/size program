@@ -33,8 +33,8 @@ public class Solution {
 HashSet<String> hashset = new HashSet<String>();     
   for(int i=0;i<t;i++)
   {
-      String pair = pair_left[i] + pair_right[i];
-      hashset.add(pair);
+     
+      hashset.add(pair_left[i]+" "+pair_right[i]);
       System.out.println(hashset.size());
   }
     }
