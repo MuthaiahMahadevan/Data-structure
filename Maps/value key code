@@ -1,0 +1,64 @@
+For each case, print "Not found" if the person has no entry in the phone book. Otherwise, print the person's name and phone number. See sample output for the exact format.
+
+To make the problem easier, we provided a portion of the code in the editor. You can either complete that code or write completely on your own.
+
+Sample Input
+3
+uncle sam
+99912222
+tom
+11122222
+harry
+12299933
+uncle sam
+uncle tom
+harry
+
+Sample Output
+uncle sam=99912222
+Not found
+harry=12299933
+
+import java.util.*;
+import java.io.*;
+
+class Solution{
+	public static void main(String []argh)
+	{
+		Scanner in = new Scanner(System.in);
+        
+        int n=in.nextInt();
+		in.nextLine();
+        String[] name= new String[n];
+        int phone[]=new int[n];
+		for(int i=0;i<n;i++)
+		{
+			name[i] = in.nextLine();
+			phone[i] = in.nextInt();
+			in.nextLine();
+		}
+        String[] s= new String[n];
+        int i=0;
+		while(in.hasNext())
+		{
+			s[i++]=in.nextLine();
+		}
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        for(int j=0;j<n;j++)
+        {
+            map.put(name[j],phone[j]);
+        }
+        for(int j=0;j<n;j++)
+        {
+            if(map.containsKey(s[j]))
+            {
+                System.out.println(name[j]+"="+phone[j]);
+            }
+            else
+                System.out.println("Not found");
+        }
+	}
+}
+
+
+
